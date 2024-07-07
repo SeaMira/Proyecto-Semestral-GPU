@@ -1,6 +1,12 @@
 #include "init.h"
+#include "shader_m.h"
+#include "camera3.h"
 #include <chrono>
-// #include <ctime>
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+void processInput(GLFWwindow *window, float deltaTime);
 
 
 int NUM_PARTICLES, LOCAL_SIZE, GROUP_SIZE;
@@ -25,64 +31,11 @@ cl::Buffer velBuff;
 // pos
 GLuint posColVao;
 GLuint posColVbo;
-GLuint ShaderProgram;
 
-const char* vertex_shader = "#version 330 core\n"
-"in vec3 position;\n"
-"in vec3 color;\n"
-"out vec3 fragColor;\n"
-"void main() {\n"
-"fragColor = color;\n"
-"gl_Position = vec4(position, 1.0f);\n"
-"}\0"
-;
-
-const char* fragment_shader = "#version 330 core\n"
-"in vec3 fragColor;\n"
-"out vec4 outColor;\n"
-"void main() {\n"
-"    outColor = vec4(fragColor, 1.0f);\n"
-"}\0"
-;
-
+// camera
+Camera* globCamera;
 
 void setBuffers() {
-    int vertexSh = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexSh, 1, &vertex_shader, NULL);
-    glCompileShader(vertexSh);
-    int success;
-    char infoLog[512];
-    glGetShaderiv(vertexSh, GL_COMPILE_STATUS, &success);
-    if (!success)
-    {
-        glGetShaderInfoLog(vertexSh, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
-    }
-
-    int fragmentSh = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentSh, 1, &fragment_shader, NULL);
-    glCompileShader(fragmentSh);
-    glGetShaderiv(fragmentSh, GL_COMPILE_STATUS, &success);
-    if (!success)
-    {
-        glGetShaderInfoLog(fragmentSh, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
-    }
-
-    ShaderProgram = glCreateProgram();
-    glAttachShader(ShaderProgram, vertexSh);
-    glAttachShader(ShaderProgram, fragmentSh);
-    glLinkProgram(ShaderProgram);
-    glGetProgramiv(ShaderProgram, GL_LINK_STATUS, &success);
-    if (!success) {
-        glGetProgramInfoLog(ShaderProgram, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
-    }
-    glDeleteShader(vertexSh);
-    glDeleteShader(fragmentSh);
-    // glUseProgram(ShaderProgram);
-
-
     hPosCol = new float[NUM_PARTICLES*6];
     hVel = new float[NUM_PARTICLES*3];
     init_values(pos_x_limit, pos_y_limit, pos_z_limit, hPosCol, NUM_PARTICLES*2);
@@ -101,18 +54,16 @@ void setBuffers() {
 
     
     // pos coords
-    GLuint position = glGetAttribLocation(ShaderProgram, "position");
-    glVertexAttribPointer(position, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, 0);
-    glEnableVertexAttribArray(position);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, 0);
+    glEnableVertexAttribArray(0);
 
     // col coords
-    GLuint color = glGetAttribLocation(ShaderProgram, "color");
-    glVertexAttribPointer(color, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(color);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
 
     glBindVertexArray(0);
-    glDisableVertexAttribArray(position);
-    glDisableVertexAttribArray(color);
+    glDisableVertexAttribArray(0);
+    glDisableVertexAttribArray(1);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
     cl_int err;
@@ -203,24 +154,52 @@ int main(int argc, char* argv[]) {
     // char *windowName = "N-Body Problem";
     initOpenGL(&window, SCR_WIDTH, SCR_HEIGHT, "N-Body Problem");
 
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetCursorPosCallback(window, mouse_callback);
+    glfwSetScrollCallback(window, scroll_callback);
 
     initOpenCL(&device, &context, &platform);
     std::string src_code = load_from_file("kernel.cl");
     initProgram(&program, &kernel, src_code, &device, &queue, &context);
 
+
+    // set shaders
+    Shader mainShader("vertexSh.txt", "fragmentSh.txt");
+    mainShader.use();
+    
+    // set buffers
     setBuffers();
+
+    // set camera
+    Camera camera(SCR_WIDTH, SCR_HEIGHT);
+    camera.SetPosition(0.0f, 5.0f, 0.0f);
+    camera.SetFront(0.0f, -1.0f, 0.0f);
+    camera.SetUp(0.0f, 0.0f, 1.0f);
+    globCamera = &camera;
+
+
     glClearColor(1.0, 1.0, 1.0, 1.0);
 
     float lastFrameTime = glfwGetTime();
     float currentFrameTime;
     float deltaTime;
     while (!glfwWindowShouldClose(window)) {
+        // updating delta between frames
         currentFrameTime = glfwGetTime();
         deltaTime = currentFrameTime - lastFrameTime;
         lastFrameTime = currentFrameTime;
+
+        // camera movement and rotation
+        processInput(window, deltaTime);
+        camera.OnRender(deltaTime*10.0f);
+
+        mainShader.use();
+        mainShader.setMat4("model", globCamera->getModel());
+        mainShader.setMat4("projection", globCamera->getProjection());
+        mainShader.setMat4("view", globCamera->getView());
+
         updatePos(deltaTime/10);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glUseProgram(ShaderProgram);
         animate(window);
     }
 
@@ -228,4 +207,46 @@ int main(int argc, char* argv[]) {
     glfwDestroyWindow(window);
     glfwTerminate();
     return 0;
+}
+
+void processInput(GLFWwindow *window, float deltaTime)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        globCamera->OnKeyboard(1, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        globCamera->OnKeyboard(2, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        globCamera->OnKeyboard(3, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        globCamera->OnKeyboard(4, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+        globCamera->OnKeyboard(5, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
+        globCamera->OnKeyboard(6, deltaTime);
+
+    
+}
+
+// glfw: whenever the window size changed (by OS or user resize) this callback function executes
+// ---------------------------------------------------------------------------------------------
+void framebuffer_size_callback(GLFWwindow* window, int width, int height){
+    // make sure the viewport matches the new window dimensions; note that width and 
+    // height will be significantly larger than specified on retina displays.
+    SCR_WIDTH = width; SCR_HEIGHT = height;
+    globCamera->SetScrSize(width, height);
+    glViewport(0, 0, width, height);
+}
+
+
+void mouse_callback(GLFWwindow* window, double xposIn, double yposIn) {
+    globCamera->OnMouse((float)xposIn, (float)yposIn);
+}
+
+// // glfw: whenever the mouse scroll wheel scrolls, this callback is called
+// // ----------------------------------------------------------------------
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
+    globCamera->OnScroll(static_cast<float>(yoffset));
 }

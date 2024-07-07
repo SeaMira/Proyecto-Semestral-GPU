@@ -4,6 +4,7 @@
 
 
 int NUM_PARTICLES, LOCAL_SIZE, GROUP_SIZE;
+int SCR_WIDTH, SCR_HEIGHT;
 
 float* hPosCol; // host opengl object for Points
 float* hVel; // host opengl object for Points
@@ -193,10 +194,14 @@ int main(int argc, char* argv[]) {
     GROUP_SIZE = std::atoi(argv[3]);
     pSize = std::stof(argv[4]);
     vel_limit = std::stof(argv[5]);
+    SCR_WIDTH = std::atoi(argv[6]);
+    SCR_HEIGHT = std::atoi(argv[7]);
+
     std::cout << NUM_PARTICLES << std::endl;
     std::cout << LOCAL_SIZE << std::endl;
     GLFWwindow* window;
-    initOpenGL(&window);
+    // char *windowName = "N-Body Problem";
+    initOpenGL(&window, SCR_WIDTH, SCR_HEIGHT, "N-Body Problem");
 
 
     initOpenCL(&device, &context, &platform);

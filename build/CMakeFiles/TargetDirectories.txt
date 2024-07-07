@@ -1,0 +1,16 @@
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/CMakeFiles/NBodyProblem.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/CMakeFiles/edit_cache.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/CMakeFiles/edit_cache.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/CMakeFiles/rebuild_cache.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/glad/CMakeFiles/glad.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/glad/CMakeFiles/edit_cache.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/glad/CMakeFiles/rebuild_cache.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/glm/CMakeFiles/edit_cache.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/glm/CMakeFiles/rebuild_cache.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/glm/glm/CMakeFiles/glm.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/glm/glm/CMakeFiles/edit_cache.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/glm/glm/CMakeFiles/rebuild_cache.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/src/CMakeFiles/NBodyProblemDependencies.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/src/CMakeFiles/edit_cache.dir
+C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/src/CMakeFiles/rebuild_cache.dir

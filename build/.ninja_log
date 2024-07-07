@@ -1,0 +1,16 @@
+# ninja log v5
+65	3267	7420816835051858	src/CMakeFiles/NBodyProblemDependencies.dir/auxilliary.cpp.obj	97d513bfe08aaf3e
+75	3349	7420816835962114	src/CMakeFiles/NBodyProblemDependencies.dir/camera3.cpp.obj	283698d99684d232
+49	5035	7420816852844566	extern/glad/CMakeFiles/glad.dir/src/glad.c.obj	d2c8ee5c80f30d3c
+57	9615	7420816898460612	extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj	773b5812fb9b32d7
+55	561	7420817457569505	extern/glad/libglad.a	50ff160d9fea785c
+70	679	7420817458786834	extern/glm/glm/libglm.a	ec597371c6a2423d
+42	4809	7420817723315551	src/CMakeFiles/NBodyProblemDependencies.dir/initCl.cpp.obj	4ef77034f3903171
+35	4230	7420822113458536	src/CMakeFiles/NBodyProblemDependencies.dir/initCl.cpp.obj	4ef77034f3903171
+62	4372	7420822987759932	src/CMakeFiles/NBodyProblemDependencies.dir/initCl.cpp.obj	4ef77034f3903171
+71	5709	7420823001159239	src/CMakeFiles/NBodyProblemDependencies.dir/initGL.cpp.obj	5026cd7096ea2250
+5710	5995	7420823004040321	src/libNBodyProblemDependencies.a	ada4a0c42797527a
+52	3727	7420824978188703	CMakeFiles/NBodyProblem.dir/chat_ex.cpp.obj	7bab49e7ef9a50ef
+3729	4297	7420824983733353	NBodyProblem.exe	76b5d4b95b076302
+29	3268	7420825599235090	CMakeFiles/NBodyProblem.dir/chat_ex.cpp.obj	7bab49e7ef9a50ef
+3270	3606	7420825602444303	NBodyProblem.exe	76b5d4b95b076302

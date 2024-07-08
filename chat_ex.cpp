@@ -29,11 +29,13 @@ cl::BufferGL posColBuff;
 cl::Buffer velBuff;
 
 // pos
-GLuint posColVao;
 GLuint posColVbo;
 
 // camera
 Camera* globCamera;
+
+// body
+Body body;
 
 void setBuffers() {
     hPosCol = new float[NUM_PARTICLES*6];
@@ -45,26 +47,20 @@ void setBuffers() {
         hVel[i+2] = (float) rand()/RAND_MAX;
     }
 
-    glGenVertexArrays(1, &posColVao);
-    glBindVertexArray(posColVao);
 
     glGenBuffers(1, &posColVbo);
     glBindBuffer(GL_ARRAY_BUFFER, posColVbo);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * NUM_PARTICLES, hPosCol, GL_DYNAMIC_DRAW);
 
-    
     // pos coords
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, 0);
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, 0);
     glEnableVertexAttribArray(0);
+    glVertexAttribDivisor(3, 1);
 
     // col coords
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, (void*)(3 * sizeof(float)));
+    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
-
-    glBindVertexArray(0);
-    glDisableVertexAttribArray(0);
-    glDisableVertexAttribArray(1);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glVertexAttribDivisor(4, 1);
 
     cl_int err;
     posColBuff = cl::BufferGL(context, CL_MEM_READ_WRITE, posColVbo, &err);
@@ -125,7 +121,6 @@ void animate(GLFWwindow* window) {
     // glDrawArrays( GL_POINTS, 0, NUM_PARTICLES );
     // glPointSize( 1. );
 
-    glBindVertexArray(posColVao); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
     glPointSize( pSize );
 
     glDrawArrays(GL_POINTS, 0, NUM_PARTICLES);
@@ -143,10 +138,11 @@ int main(int argc, char* argv[]) {
     NUM_PARTICLES = std::atoi(argv[1]);
     LOCAL_SIZE = std::atoi(argv[2]);
     GROUP_SIZE = std::atoi(argv[3]);
-    pSize = std::stof(argv[4]);
-    vel_limit = std::stof(argv[5]);
-    SCR_WIDTH = std::atoi(argv[6]);
-    SCR_HEIGHT = std::atoi(argv[7]);
+    radius = std::stof(argv[4]);
+    subdivision = std::stoi(argv[5]);
+    vel_limit = std::stof(argv[6]);
+    SCR_WIDTH = std::atoi(argv[7]);
+    SCR_HEIGHT = std::atoi(argv[8]);
 
     std::cout << NUM_PARTICLES << std::endl;
     std::cout << LOCAL_SIZE << std::endl;

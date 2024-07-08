@@ -1,3 +1,6 @@
+#ifndef _INIT_H_
+#define _INIT_H_
+
 #include <CL/cl.hpp>
 #include <CL/cl_gl.h>
 #include <iostream>
@@ -17,3 +20,5 @@
 void initOpenCL(cl::Device* device, cl::Context* context, cl::Platform* platform);
 void initProgram(cl::Program* program, cl::Kernel* kernel, std::string kernelSource, cl::Device* device, cl::CommandQueue* queue, cl::Context* context);
 void initOpenGL(GLFWwindow** window, int SCREEN_WIDTH, int SCREEN_HEIGHT, const char* window_name);
+
+#endif // _INIT_H_

@@ -121,30 +121,13 @@ void updatePos(float dt) {
 }
 
 void animate(GLFWwindow* window, float dt, int numParticles) {
-    // glBindBuffer( GL_ARRAY_BUFFER, posColVbo);
-    // glVertexPointer( 3, GL_FLOAT, sizeof(float)*3, (void *)0 );
-    // glEnableClientState( GL_VERTEX_ARRAY );
-    // glColorPointer( 3, GL_FLOAT, sizeof(float)*3, (void *)(sizeof(float)*3) );
-    // glEnableClientState( GL_COLOR_ARRAY );
-    // glPointSize( 2. );
-    // glDrawArrays( GL_POINTS, 0, NUM_PARTICLES );
-    // glPointSize( 1. );
-
-    // glPointSize( pSize );
-
-    // glDrawArrays(GL_POINTS, 0, NUM_PARTICLES);
+    
     body.bindBodyBuffers();
     body.RenderBody(dt);
     renderBuffers();
-    // body.bindBodyVAO();
     glDrawElementsInstanced(GL_TRIANGLES, body.getIndicesSize()*3, GL_UNSIGNED_INT, 0, numParticles);
     body.unbindBodyBuffers();
 
-
-
-    // glDisableClientState( GL_VERTEX_ARRAY );
-    // glDisableClientState( GL_COLOR_ARRAY );
-    // glBindBuffer( GL_ARRAY_BUFFER, 0 );
     glfwSwapBuffers(window);
     glfwPollEvents();
 }
@@ -206,7 +189,6 @@ int main(int argc, char* argv[]) {
     float currentFrameTime;
     float deltaTime;
     while (!glfwWindowShouldClose(window)) {
-        // std::cout << hPosCol[0] << std::endl;
         // updating delta between frames
         currentFrameTime = glfwGetTime();
         deltaTime = currentFrameTime - lastFrameTime;

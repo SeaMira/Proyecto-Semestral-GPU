@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glm
+# Install script for directory: D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/glm/glm/cmake_install.cmake")
+  include("D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/extern/glm/glm/cmake_install.cmake")
 
 endif()
 

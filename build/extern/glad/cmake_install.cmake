@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glad
+# Install script for directory: D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

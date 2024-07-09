@@ -99,7 +99,7 @@ rule CXX_STATIC_LIBRARY_LINKER__NBodyProblemDependencies_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU" -B"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build"
+  command = C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU" -B"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build"
   description = Re-running CMake...
   generator = 1
 

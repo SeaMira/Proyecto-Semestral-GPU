@@ -1,3 +1,4 @@
+#include "body.h"
 #include "init.h"
 #include "shader_m.h"
 #include "camera3.h"
@@ -16,7 +17,7 @@ float* hPosCol; // host opengl object for Points
 float* hVel; // host opengl object for Points
 
 float pSize, vel_limit;
-int pos_x_limit = 1, pos_y_limit = 1, pos_z_limit = 1;
+int pos_x_limit = 5, pos_y_limit = 5, pos_z_limit = 5;
 
 cl::Device device;
 cl::Platform platform;
@@ -47,20 +48,10 @@ void setBuffers() {
         hVel[i+2] = (float) rand()/RAND_MAX;
     }
 
-
     glGenBuffers(1, &posColVbo);
     glBindBuffer(GL_ARRAY_BUFFER, posColVbo);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * NUM_PARTICLES, hPosCol, GL_DYNAMIC_DRAW);
-
-    // pos coords
-    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, 0);
-    glEnableVertexAttribArray(0);
-    glVertexAttribDivisor(3, 1);
-
-    // col coords
-    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-    glVertexAttribDivisor(4, 1);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * NUM_PARTICLES, hPosCol, GL_STATIC_DRAW);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
 
     cl_int err;
     posColBuff = cl::BufferGL(context, CL_MEM_READ_WRITE, posColVbo, &err);
@@ -76,6 +67,24 @@ void setBuffers() {
     }
 
     queue.enqueueWriteBuffer(velBuff, CL_TRUE, 0, NUM_PARTICLES*3, hVel);
+}
+
+void renderBuffers() {
+    glBindBuffer(GL_ARRAY_BUFFER, posColVbo);
+
+    // pos coords
+    glEnableVertexAttribArray(2);
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, 0);
+    glVertexAttribDivisor(2, 1);
+
+    // col coords
+    glEnableVertexAttribArray(3);
+    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, (void*)(3 * sizeof(float)));
+    glVertexAttribDivisor(3, 1);
+
+    // glBindBuffer(GL_ARRAY_BUFFER, 0);
+    // glDisableVertexAttribArray(2);
+    // glDisableVertexAttribArray(3);
 }
 
 void updatePos(float dt) {
@@ -101,7 +110,7 @@ void updatePos(float dt) {
     cl::NDRange LocalWorkSize(LOCAL_SIZE, 1, 1);
 
     queue.enqueueNDRangeKernel(kernel, cl::NullRange, GlobalWorkSize, LocalWorkSize);
-    
+    queue.enqueueReadBuffer(posColBuff, CL_TRUE, 0, sizeof(float)*6*NUM_PARTICLES, hPosCol);
     res = queue.enqueueReleaseGLObjects(&glObjects);
     if (res!=CL_SUCCESS) {
         std::cout<<"Failed releasing GL object: "<<res<<std::endl;
@@ -111,7 +120,7 @@ void updatePos(float dt) {
     queue.finish();
 }
 
-void animate(GLFWwindow* window) {
+void animate(GLFWwindow* window, float dt, int numParticles) {
     // glBindBuffer( GL_ARRAY_BUFFER, posColVbo);
     // glVertexPointer( 3, GL_FLOAT, sizeof(float)*3, (void *)0 );
     // glEnableClientState( GL_VERTEX_ARRAY );
@@ -121,13 +130,21 @@ void animate(GLFWwindow* window) {
     // glDrawArrays( GL_POINTS, 0, NUM_PARTICLES );
     // glPointSize( 1. );
 
-    glPointSize( pSize );
+    // glPointSize( pSize );
 
-    glDrawArrays(GL_POINTS, 0, NUM_PARTICLES);
+    // glDrawArrays(GL_POINTS, 0, NUM_PARTICLES);
+    body.bindBodyBuffers();
+    body.RenderBody(dt);
+    renderBuffers();
+    // body.bindBodyVAO();
+    glDrawElementsInstanced(GL_TRIANGLES, body.getIndicesSize()*3, GL_UNSIGNED_INT, 0, numParticles);
+    body.unbindBodyBuffers();
+
+
 
     // glDisableClientState( GL_VERTEX_ARRAY );
     // glDisableClientState( GL_COLOR_ARRAY );
-    glBindBuffer( GL_ARRAY_BUFFER, 0 );
+    // glBindBuffer( GL_ARRAY_BUFFER, 0 );
     glfwSwapBuffers(window);
     glfwPollEvents();
 }
@@ -138,14 +155,22 @@ int main(int argc, char* argv[]) {
     NUM_PARTICLES = std::atoi(argv[1]);
     LOCAL_SIZE = std::atoi(argv[2]);
     GROUP_SIZE = std::atoi(argv[3]);
-    radius = std::stof(argv[4]);
-    subdivision = std::stoi(argv[5]);
+    float radius = std::stof(argv[4]);
+    int subdivision = std::stoi(argv[5]);
     vel_limit = std::stof(argv[6]);
     SCR_WIDTH = std::atoi(argv[7]);
     SCR_HEIGHT = std::atoi(argv[8]);
 
-    std::cout << NUM_PARTICLES << std::endl;
-    std::cout << LOCAL_SIZE << std::endl;
+    body.setParameters(radius, subdivision);
+
+    std::cout << "NUM_PARTICLES " << NUM_PARTICLES << std::endl;
+    std::cout << "LOCAL_SIZE " << LOCAL_SIZE << std::endl;
+    std::cout << "GROUP_SIZE " << GROUP_SIZE << std::endl;
+    std::cout << "radius " << radius << std::endl;
+    std::cout << "subdivision " << subdivision << std::endl;
+    std::cout << "vel_limit " << vel_limit << std::endl;
+    std::cout << "SCR_WIDTH " << SCR_WIDTH << std::endl;
+    std::cout << "SCR_HEIGHT " << SCR_HEIGHT << std::endl;
     GLFWwindow* window;
     // char *windowName = "N-Body Problem";
     initOpenGL(&window, SCR_WIDTH, SCR_HEIGHT, "N-Body Problem");
@@ -164,6 +189,7 @@ int main(int argc, char* argv[]) {
     mainShader.use();
     
     // set buffers
+    body.CreateBodyOnGPU();
     setBuffers();
 
     // set camera
@@ -173,13 +199,14 @@ int main(int argc, char* argv[]) {
     camera.SetUp(0.0f, 0.0f, 1.0f);
     globCamera = &camera;
 
-
+    glEnable(GL_DEPTH_TEST);
     glClearColor(1.0, 1.0, 1.0, 1.0);
 
     float lastFrameTime = glfwGetTime();
     float currentFrameTime;
     float deltaTime;
     while (!glfwWindowShouldClose(window)) {
+        // std::cout << hPosCol[0] << std::endl;
         // updating delta between frames
         currentFrameTime = glfwGetTime();
         deltaTime = currentFrameTime - lastFrameTime;
@@ -194,9 +221,9 @@ int main(int argc, char* argv[]) {
         mainShader.setMat4("projection", globCamera->getProjection());
         mainShader.setMat4("view", globCamera->getView());
 
-        updatePos(deltaTime/10);
+        updatePos(deltaTime/100);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        animate(window);
+        animate(window, deltaTime, NUM_PARTICLES);
     }
 
     glDeleteBuffers(1, &posColVbo);

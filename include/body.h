@@ -20,6 +20,7 @@ class Body {
     public:
         void setRadius(float r);
         void setSubdivisions(int n);
+        void setParameters(float r, int n);
 
         float getRadius();
         int getSubdivisions();
@@ -34,6 +35,7 @@ class Body {
 
         void CreateBodyOnGPU();
         void bindBodyBuffers();
+        void bindBodyVAO();
         void RenderBody(float dt);
         void unbindBodyBuffers();
 

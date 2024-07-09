@@ -143,11 +143,15 @@ void Body::generateIcosphere() {
 // setters
 void Body::setRadius(float r) {
     this->r = r;
-    generateIcosphere();
 }
 
 void Body::setSubdivisions(int n) {
     this->subdivisions = n;
+}
+
+void Body::setParameters(float r, int n) {
+    setRadius(r);
+    setSubdivisions(n);
     generateIcosphere();
 }
 
@@ -165,16 +169,17 @@ int Body::getVertexSize() {
 } 
 
 Vertex* Body::getVertexData() {
-    return (this->vertices).data();
-} 
-
-Triangle* Body::getIndicesData() {
-    return (this->indices).data();
+    return &vertices[0];
 } 
 
 int Body::getIndicesSize() {
     return (this->indices).size();
 } 
+
+Triangle* Body::getIndicesData() {
+    return &indices[0];
+} 
+
 
 // gl buffers
 void Body::CreateBodyOnGPU() {
@@ -196,9 +201,9 @@ void Body::CreateBodyOnGPU() {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, bodyIbo);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Triangle)*getIndicesSize(), getIndicesData(), GL_STATIC_DRAW);
     
-    glBindVertexArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+    // glBindVertexArray(0);
+    // glBindBuffer(GL_ARRAY_BUFFER, 0);
+    // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
 void Body::bindBodyBuffers() {
@@ -207,12 +212,16 @@ void Body::bindBodyBuffers() {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, bodyIbo);
 }
 
+void Body::bindBodyVAO() {
+    glBindVertexArray(bodyVao);
+}
+
 void Body::unbindBodyBuffers() {
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-    glDisableVertexAttribArray(0);
-    glDisableVertexAttribArray(1);
+    // glDisableVertexAttribArray(0);
+    // glDisableVertexAttribArray(1);
 }
 
 

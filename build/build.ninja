@@ -34,7 +34,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/build/
+cmake_ninja_workdir = D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/
 # =============================================================================
 # Object build statements for EXECUTABLE target NBodyProblem
 
@@ -44,11 +44,11 @@ cmake_ninja_workdir = C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proy
 
 build cmake_object_order_depends_target_NBodyProblem: phony || cmake_object_order_depends_target_NBodyProblemDependencies cmake_object_order_depends_target_glad cmake_object_order_depends_target_glm
 
-build CMakeFiles/NBodyProblem.dir/chat_ex.cpp.obj: CXX_COMPILER__NBodyProblem_unscanned_ C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/chat_ex.cpp || cmake_object_order_depends_target_NBodyProblem
+build CMakeFiles/NBodyProblem.dir/chat_ex.cpp.obj: CXX_COMPILER__NBodyProblem_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/chat_ex.cpp || cmake_object_order_depends_target_NBodyProblem
   DEFINES = -DCL_HPP_MINIMUM_OPENCL_VERSION=0 -DCL_HPP_TARGET_OPENCL_VERSION=0
   DEP_FILE = CMakeFiles\NBodyProblem.dir\chat_ex.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/include" -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glad/include" -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glm"
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
   OBJECT_DIR = CMakeFiles\NBodyProblem.dir
   OBJECT_FILE_DIR = CMakeFiles\NBodyProblem.dir
 
@@ -74,8 +74,9 @@ build NBodyProblem.exe: CXX_EXECUTABLE_LINKER__NBodyProblem_ CMakeFiles/NBodyPro
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build" && C:\msys64\ucrt64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build" && C:\msys64\ucrt64\bin\cmake-gui.exe -S"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU" -B"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build""
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build edit_cache: phony CMakeFiles/edit_cache.util
@@ -85,7 +86,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU" -B"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU" -B"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -94,7 +95,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/CMakeLists.txt
+# D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/CMakeLists.txt
 # =============================================================================
 
 
@@ -102,8 +103,9 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build extern/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build\extern" && C:\msys64\ucrt64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build\extern" && C:\msys64\ucrt64\bin\cmake-gui.exe -S"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU" -B"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build""
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build extern/edit_cache: phony extern/CMakeFiles/edit_cache.util
@@ -113,7 +115,7 @@ build extern/edit_cache: phony extern/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build extern/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build\extern" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU" -B"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build\extern" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU" -B"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -122,7 +124,7 @@ build extern/rebuild_cache: phony extern/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/CMakeLists.txt
+# D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -134,9 +136,9 @@ build extern/rebuild_cache: phony extern/CMakeFiles/rebuild_cache.util
 
 build cmake_object_order_depends_target_glad: phony || extern/glad/CMakeFiles/glad.dir
 
-build extern/glad/CMakeFiles/glad.dir/src/glad.c.obj: C_COMPILER__glad_unscanned_ C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glad/src/glad.c || cmake_object_order_depends_target_glad
+build extern/glad/CMakeFiles/glad.dir/src/glad.c.obj: C_COMPILER__glad_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/src/glad.c || cmake_object_order_depends_target_glad
   DEP_FILE = extern\glad\CMakeFiles\glad.dir\src\glad.c.obj.d
-  INCLUDES = -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glad/include"
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include"
   OBJECT_DIR = extern\glad\CMakeFiles\glad.dir
   OBJECT_FILE_DIR = extern\glad\CMakeFiles\glad.dir\src
 
@@ -160,8 +162,9 @@ build extern/glad/libglad.a: C_STATIC_LIBRARY_LINKER__glad_ extern/glad/CMakeFil
 # Utility command for edit_cache
 
 build extern/glad/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build\extern\glad" && C:\msys64\ucrt64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build\extern\glad" && C:\msys64\ucrt64\bin\cmake-gui.exe -S"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU" -B"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build""
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build extern/glad/edit_cache: phony extern/glad/CMakeFiles/edit_cache.util
@@ -171,7 +174,7 @@ build extern/glad/edit_cache: phony extern/glad/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build extern/glad/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build\extern\glad" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU" -B"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build\extern\glad" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU" -B"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -180,7 +183,7 @@ build extern/glad/rebuild_cache: phony extern/glad/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/CMakeLists.txt
+# D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/CMakeLists.txt
 # =============================================================================
 
 
@@ -188,8 +191,9 @@ build extern/glad/rebuild_cache: phony extern/glad/CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build extern/glm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build\extern\glm" && C:\msys64\ucrt64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build\extern\glm" && C:\msys64\ucrt64\bin\cmake-gui.exe -S"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU" -B"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build""
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build extern/glm/edit_cache: phony extern/glm/CMakeFiles/edit_cache.util
@@ -199,7 +203,7 @@ build extern/glm/edit_cache: phony extern/glm/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build extern/glm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build\extern\glm" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU" -B"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build\extern\glm" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU" -B"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -208,7 +212,7 @@ build extern/glm/rebuild_cache: phony extern/glm/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glm/CMakeLists.txt
+# D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -220,10 +224,10 @@ build extern/glm/rebuild_cache: phony extern/glm/CMakeFiles/rebuild_cache.util
 
 build cmake_object_order_depends_target_glm: phony || extern/glm/glm/CMakeFiles/glm.dir
 
-build extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj: CXX_COMPILER__glm_unscanned_ C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glm/glm/detail/glm.cpp || cmake_object_order_depends_target_glm
+build extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj: CXX_COMPILER__glm_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/glm/detail/glm.cpp || cmake_object_order_depends_target_glm
   DEP_FILE = extern\glm\glm\CMakeFiles\glm.dir\detail\glm.cpp.obj.d
   FLAGS = -std=c++17
-  INCLUDES = -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glm"
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
   OBJECT_DIR = extern\glm\glm\CMakeFiles\glm.dir
   OBJECT_FILE_DIR = extern\glm\glm\CMakeFiles\glm.dir\detail
 
@@ -247,8 +251,9 @@ build extern/glm/glm/libglm.a: CXX_STATIC_LIBRARY_LINKER__glm_ extern/glm/glm/CM
 # Utility command for edit_cache
 
 build extern/glm/glm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build\extern\glm\glm" && C:\msys64\ucrt64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build\extern\glm\glm" && C:\msys64\ucrt64\bin\cmake-gui.exe -S"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU" -B"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build""
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build extern/glm/glm/edit_cache: phony extern/glm/glm/CMakeFiles/edit_cache.util
@@ -258,7 +263,7 @@ build extern/glm/glm/edit_cache: phony extern/glm/glm/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build extern/glm/glm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build\extern\glm\glm" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU" -B"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build\extern\glm\glm" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU" -B"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -267,7 +272,7 @@ build extern/glm/glm/rebuild_cache: phony extern/glm/glm/CMakeFiles/rebuild_cach
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/CMakeLists.txt
+# D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -279,31 +284,38 @@ build extern/glm/glm/rebuild_cache: phony extern/glm/glm/CMakeFiles/rebuild_cach
 
 build cmake_object_order_depends_target_NBodyProblemDependencies: phony || cmake_object_order_depends_target_glad cmake_object_order_depends_target_glm
 
-build src/CMakeFiles/NBodyProblemDependencies.dir/auxilliary.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/src/auxilliary.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
+build src/CMakeFiles/NBodyProblemDependencies.dir/auxilliary.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/auxilliary.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
   DEP_FILE = src\CMakeFiles\NBodyProblemDependencies.dir\auxilliary.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/include" -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glad/include" -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glm"
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
   OBJECT_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
   OBJECT_FILE_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
 
-build src/CMakeFiles/NBodyProblemDependencies.dir/camera3.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/src/camera3.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
+build src/CMakeFiles/NBodyProblemDependencies.dir/body.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/body.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
+  DEP_FILE = src\CMakeFiles\NBodyProblemDependencies.dir\body.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
+  OBJECT_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
+
+build src/CMakeFiles/NBodyProblemDependencies.dir/camera3.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/camera3.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
   DEP_FILE = src\CMakeFiles\NBodyProblemDependencies.dir\camera3.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/include" -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glad/include" -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glm"
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
   OBJECT_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
   OBJECT_FILE_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
 
-build src/CMakeFiles/NBodyProblemDependencies.dir/initCl.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/src/initCl.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
+build src/CMakeFiles/NBodyProblemDependencies.dir/initCl.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/initCl.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
   DEP_FILE = src\CMakeFiles\NBodyProblemDependencies.dir\initCl.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/include" -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glad/include" -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glm"
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
   OBJECT_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
   OBJECT_FILE_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
 
-build src/CMakeFiles/NBodyProblemDependencies.dir/initGL.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/src/initGL.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
+build src/CMakeFiles/NBodyProblemDependencies.dir/initGL.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/initGL.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
   DEP_FILE = src\CMakeFiles\NBodyProblemDependencies.dir\initGL.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/include" -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glad/include" -I"C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glm"
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
   OBJECT_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
   OBJECT_FILE_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
 
@@ -315,7 +327,7 @@ build src/CMakeFiles/NBodyProblemDependencies.dir/initGL.cpp.obj: CXX_COMPILER__
 #############################################
 # Link the static library src\libNBodyProblemDependencies.a
 
-build src/libNBodyProblemDependencies.a: CXX_STATIC_LIBRARY_LINKER__NBodyProblemDependencies_ src/CMakeFiles/NBodyProblemDependencies.dir/auxilliary.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/camera3.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/initCl.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/initGL.cpp.obj || extern/glad/libglad.a extern/glm/glm/libglm.a
+build src/libNBodyProblemDependencies.a: CXX_STATIC_LIBRARY_LINKER__NBodyProblemDependencies_ src/CMakeFiles/NBodyProblemDependencies.dir/auxilliary.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/body.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/camera3.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/initCl.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/initGL.cpp.obj || extern/glad/libglad.a extern/glm/glm/libglm.a
   OBJECT_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -327,8 +339,9 @@ build src/libNBodyProblemDependencies.a: CXX_STATIC_LIBRARY_LINKER__NBodyProblem
 # Utility command for edit_cache
 
 build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build\src" && C:\msys64\ucrt64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build\src" && C:\msys64\ucrt64\bin\cmake-gui.exe -S"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU" -B"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build""
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build src/edit_cache: phony src/CMakeFiles/edit_cache.util
@@ -338,7 +351,7 @@ build src/edit_cache: phony src/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build\src" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU" -B"C:\Users\Public\Documents\U\9no Semestre Primavera\Proyectos\Proyecto-Semestral-GPU\build""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build\src" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -S"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU" -B"D:\Users\Escritorio\U\Otoño 2024 - 9no semestre\Computacion-En-GPU\Proyecto-Semestral-GPU\build""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -368,42 +381,42 @@ build libglm.a: phony extern/glm/glm/libglm.a
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build
+# Folder: D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build
 
 build all: phony NBodyProblem.exe extern/all src/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern
+# Folder: D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/extern
 
 build extern/all: phony extern/glad/all extern/glm/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/glad
+# Folder: D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/extern/glad
 
 build extern/glad/all: phony extern/glad/libglad.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/glm
+# Folder: D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/extern/glm
 
 build extern/glm/all: phony extern/glm/glm/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/extern/glm/glm
+# Folder: D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/extern/glm/glm
 
 build extern/glm/glm/all: phony extern/glm/glm/libglm.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Public/Documents/U/9no Semestre Primavera/Proyectos/Proyecto-Semestral-GPU/build/src
+# Folder: D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/src
 
 build src/all: phony src/libNBodyProblemDependencies.a
 
@@ -414,14 +427,14 @@ build src/all: phony src/libNBodyProblemDependencies.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/CMakeLists.txt C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/extern/CMakeLists.txt C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glad/CMakeLists.txt C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glm/CMakeLists.txt C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glm/glm/CMakeLists.txt C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/src/CMakeLists.txt C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Config.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3ConfigVersion.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets-release.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindOpenGL.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageMessage.cmake C$:/msys64/ucrt64/share/cmake/Modules/GNUInstallDirs.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Config.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3ConfigVersion.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets-release.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindOpenGL.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageMessage.cmake C$:/msys64/ucrt64/share/cmake/Modules/GNUInstallDirs.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/glm/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/CMakeLists.txt C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/extern/CMakeLists.txt C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glad/CMakeLists.txt C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glm/CMakeLists.txt C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/extern/glm/glm/CMakeLists.txt C$:/Users/Public/Documents/U/9no$ Semestre$ Primavera/Proyectos/Proyecto-Semestral-GPU/src/CMakeLists.txt C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Config.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3ConfigVersion.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets-release.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindOpenGL.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageMessage.cmake C$:/msys64/ucrt64/share/cmake/Modules/GNUInstallDirs.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake: phony
+build C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Config.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3ConfigVersion.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets-release.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindOpenGL.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageMessage.cmake C$:/msys64/ucrt64/share/cmake/Modules/GNUInstallDirs.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/glm/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/CMakeLists.txt: phony
 
 
 #############################################

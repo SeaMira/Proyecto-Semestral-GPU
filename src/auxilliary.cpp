@@ -11,10 +11,13 @@ using namespace std;
 void init_values(int x_limit, int y_limit, int z_limit, float *arr, int arr_size) {
   // srand(time(0));
 
-  for (int i = 0; i < arr_size*3; i+=3) {
+  for (int i = 0; i < arr_size*6; i+=6) {
     arr[i] = (float)((rand() % (2*x_limit)) - x_limit) + (float) rand()/RAND_MAX;
     arr[i+1] = (float)((rand() % (2*y_limit)) - y_limit) + (float) rand()/RAND_MAX;
     arr[i+2] = (float)((rand() % (2*z_limit)) - z_limit) + (float) rand()/RAND_MAX;
+    arr[i+3] = (float) rand()/RAND_MAX;
+    arr[i+4] = (float) rand()/RAND_MAX;
+    arr[i+5] = (float) rand()/RAND_MAX;
   }
 
 }

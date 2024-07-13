@@ -2,8 +2,7 @@ kernel void bodyInteraction(__global float *pos, __global float *vel, const int 
   int gindex = get_global_id(0);
   if (gindex < bodies) {
     float x, y, z, vx, vy, vz;
-  
-
+    float g=1000.0f;
     // getting this thread's position
     x = pos[gindex*6];
     y = pos[gindex*6+1];
@@ -26,12 +25,14 @@ kernel void bodyInteraction(__global float *pos, __global float *vel, const int 
       dist = sqrt(dx*dx + dy*dy + dz*dz);
       
       cubedDist = dist*dist*dist;
-      vec = cubedDist;
 
-      acc[0] += vec*dx;
-      acc[1] += vec*dy;
-      acc[2] += vec*dz;
-      
+      if (dist > 0) { // Evitar la división por cero
+          vec = g / (dist * dist);
+          
+          acc[0] += vec * dx;
+          acc[1] += vec * dy;
+          acc[2] += vec * dz;
+      }
     }
 
     vx += acc[0]*step;

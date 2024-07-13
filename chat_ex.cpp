@@ -17,8 +17,8 @@ float* hPosCol; // host opengl object for Points
 float* hVel; // host opengl object for Points
 
 float pSize, vel_limit;
-int pos_x_limit = 5, pos_y_limit = 5, pos_z_limit = 5;
-
+int pos_x_limit = 5, pos_y_limit = 5, pos_z_limit = 5,mode=0;
+float framerate=60.0f,radius;
 cl::Device device;
 cl::Platform platform;
 cl::CommandQueue queue;
@@ -41,7 +41,7 @@ Body body;
 void setBuffers() {
     hPosCol = new float[NUM_PARTICLES*6];
     hVel = new float[NUM_PARTICLES*3];
-    init_values(pos_x_limit, pos_y_limit, pos_z_limit, hPosCol, NUM_PARTICLES*2);
+    init_values(pos_x_limit, pos_y_limit, pos_z_limit, hPosCol, NUM_PARTICLES);
     for (int i = 0; i < NUM_PARTICLES*3; i+=3) {
         hVel[i] = (float) rand()/RAND_MAX;
         hVel[i+1] = (float) rand()/RAND_MAX;
@@ -106,6 +106,9 @@ void updatePos(float dt) {
     kernel.setArg(1, velBuff);
     kernel.setArg(2, NUM_PARTICLES);
     kernel.setArg(3, dt);
+    if(mode==1){
+        kernel.setArg(4,radius/2);
+    }
     cl::NDRange GlobalWorkSize(GROUP_SIZE, 1, 1);
     cl::NDRange LocalWorkSize(LOCAL_SIZE, 1, 1);
 
@@ -125,7 +128,11 @@ void animate(GLFWwindow* window, float dt, int numParticles) {
     body.bindBodyBuffers();
     body.RenderBody(dt);
     renderBuffers();
-    glDrawElementsInstanced(GL_TRIANGLES, body.getIndicesSize()*3, GL_UNSIGNED_INT, 0, numParticles);
+    GLsizei elem=500;
+    for(int i=0;500*i<(numParticles+500);i++){
+        const void* offset = (const void*)(i * elem * sizeof(GLuint));
+        glDrawElementsInstanced(GL_TRIANGLES, body.getIndicesSize()*3, GL_UNSIGNED_INT, offset, std::min(500.0f,(float)(numParticles-i*500)));
+    }
     body.unbindBodyBuffers();
 
     glfwSwapBuffers(window);
@@ -138,12 +145,15 @@ int main(int argc, char* argv[]) {
     NUM_PARTICLES = std::atoi(argv[1]);
     LOCAL_SIZE = std::atoi(argv[2]);
     GROUP_SIZE = std::atoi(argv[3]);
-    float radius = std::stof(argv[4]);
+    radius = std::stof(argv[4]);
     int subdivision = std::stoi(argv[5]);
     vel_limit = std::stof(argv[6]);
     SCR_WIDTH = std::atoi(argv[7]);
     SCR_HEIGHT = std::atoi(argv[8]);
-
+    pos_x_limit = std::atoi(argv[9]);
+    pos_y_limit = std::atoi(argv[9]);
+    pos_z_limit = std::atoi(argv[9]);
+    mode= std::atoi(argv[10]);
     body.setParameters(radius, subdivision);
 
     std::cout << "NUM_PARTICLES " << NUM_PARTICLES << std::endl;
@@ -163,7 +173,13 @@ int main(int argc, char* argv[]) {
     glfwSetScrollCallback(window, scroll_callback);
 
     initOpenCL(&device, &context, &platform);
-    std::string src_code = load_from_file("kernel.cl");
+    std::string src_code;
+    if(mode==1){
+        src_code = load_from_file("collisionKernel.cl");
+    }
+    else{
+        src_code = load_from_file("kernel.cl");
+    }
     initProgram(&program, &kernel, src_code, &device, &queue, &context);
 
 
@@ -183,7 +199,7 @@ int main(int argc, char* argv[]) {
     globCamera = &camera;
 
     glEnable(GL_DEPTH_TEST);
-    glClearColor(1.0, 1.0, 1.0, 1.0);
+    glClearColor(0.0, 0.0, 0.0, 1.0);
 
     float lastFrameTime = glfwGetTime();
     float currentFrameTime;
@@ -206,6 +222,7 @@ int main(int argc, char* argv[]) {
         updatePos(deltaTime/100);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         animate(window, deltaTime, NUM_PARTICLES);
+        std::cout<<"framerate: "<<1.0/deltaTime<<std::endl;
     }
 
     glDeleteBuffers(1, &posColVbo);

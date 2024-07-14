@@ -1,6 +1,7 @@
 D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/CMakeFiles/NBodyProblem.dir
 D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/CMakeFiles/edit_cache.dir
 D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/CMakeFiles/rebuild_cache.dir
+D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/extern/CMakeFiles/imgui.dir
 D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/extern/CMakeFiles/edit_cache.dir
 D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/extern/CMakeFiles/rebuild_cache.dir
 D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/extern/glad/CMakeFiles/glad.dir

@@ -1,5 +1,6 @@
 #include "body.h"
 #include "init.h"
+#include "interface.h"
 #include "shader_m.h"
 #include "camera3.h"
 #include <chrono>
@@ -19,6 +20,7 @@ float* hVel; // host opengl object for Points
 float pSize, vel_limit;
 int pos_x_limit = 5, pos_y_limit = 5, pos_z_limit = 5,mode=0;
 float framerate=60.0f,radius;
+float dtSpeed = 0.5f;
 cl::Device device;
 cl::Platform platform;
 cl::CommandQueue queue;
@@ -37,6 +39,40 @@ Camera* globCamera;
 
 // body
 Body body;
+
+
+// illumination
+
+// directional light default settings
+glm::vec3 defDirDirection(0.05f, 0.05f, 0.05f);
+glm::vec3 defDirAmbient(0.5f, 0.5f, 0.5f);
+glm::vec3 defDirDiffuse(0.4f, 0.4f, 0.4f);
+glm::vec3 defDirSpecular(0.5f, 0.5f, 0.5f);
+
+// general illumination settigns
+glm::vec3 lightColor(1.0f, 1.0f, 1.0f);
+glm::vec3 objectColor(1.0f, 0.5f, 0.31f);
+
+
+void updateScenelight(Shader& shader) {
+    shader.setVec3("dirLight.direction", defDirDirection);
+    shader.setVec3("dirLight.ambient", defDirAmbient);
+    shader.setVec3("dirLight.diffuse", defDirDiffuse);
+    shader.setVec3("dirLight.specular", defDirSpecular);
+}
+
+void UserMenu() {
+    // Convert currentTime to 24-hour format
+    ImGui::Begin("Scene Info");  
+    ImGui::Text("Frame Rate: %f", framerate);
+    ImGui::Text("Position (%.2f, %.2f, %.2f)", globCamera->getPosition().x, globCamera->getPosition().y, globCamera->getPosition().z);
+    ImGui::Text("Body Velocity:");
+    ImGui::SliderFloat(" ", &dtSpeed, 0.0001f, 0.5f, "%.4f");
+
+
+    ImGui::End();
+}
+
 
 void setBuffers() {
     hPosCol = new float[NUM_PARTICLES*6];
@@ -107,7 +143,7 @@ void updatePos(float dt) {
     kernel.setArg(2, NUM_PARTICLES);
     kernel.setArg(3, dt);
     if(mode==1){
-        kernel.setArg(4,radius/2);
+        kernel.setArg(4,radius);
     }
     cl::NDRange GlobalWorkSize(GROUP_SIZE, 1, 1);
     cl::NDRange LocalWorkSize(LOCAL_SIZE, 1, 1);
@@ -129,10 +165,11 @@ void animate(GLFWwindow* window, float dt, int numParticles) {
     body.RenderBody(dt);
     renderBuffers();
     GLsizei elem=500;
-    for(int i=0;500*i<(numParticles+500);i++){
-        const void* offset = (const void*)(i * elem * sizeof(GLuint));
-        glDrawElementsInstanced(GL_TRIANGLES, body.getIndicesSize()*3, GL_UNSIGNED_INT, offset, std::min(500.0f,(float)(numParticles-i*500)));
-    }
+    // for(int i=0;500*i<(numParticles+500);i++){
+    //     const void* offset = (const void*)(i * elem * sizeof(GLuint));
+    //     glDrawElementsInstanced(GL_TRIANGLES, body.getIndicesSize()*3, GL_UNSIGNED_INT, offset, std::min(500.0f,(float)(numParticles-i*500)));
+    // }
+    glDrawElementsInstanced(GL_TRIANGLES, body.getIndicesSize()*3, GL_UNSIGNED_INT, 0, numParticles);
     body.unbindBodyBuffers();
 
     glfwSwapBuffers(window);
@@ -168,9 +205,15 @@ int main(int argc, char* argv[]) {
     // char *windowName = "N-Body Problem";
     initOpenGL(&window, SCR_WIDTH, SCR_HEIGHT, "N-Body Problem");
 
+    // interface with imgui
+    Interface gui(window);
+    gui.initContext();
+
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     glfwSetCursorPosCallback(window, mouse_callback);
     glfwSetScrollCallback(window, scroll_callback);
+
+    gui.initWithOpenGL();
 
     initOpenCL(&device, &context, &platform);
     std::string src_code;
@@ -199,7 +242,7 @@ int main(int argc, char* argv[]) {
     globCamera = &camera;
 
     glEnable(GL_DEPTH_TEST);
-    glClearColor(0.0, 0.0, 0.0, 1.0);
+    glClearColor(0.2, 0.3, 0.3, 1.0);
 
     float lastFrameTime = glfwGetTime();
     float currentFrameTime;
@@ -214,15 +257,25 @@ int main(int argc, char* argv[]) {
         processInput(window, deltaTime);
         camera.OnRender(deltaTime*10.0f);
 
+        gui.newFrame();
+
         mainShader.use();
         mainShader.setMat4("model", globCamera->getModel());
         mainShader.setMat4("projection", globCamera->getProjection());
         mainShader.setMat4("view", globCamera->getView());
 
-        updatePos(deltaTime/100);
+        updateScenelight(mainShader);
+        mainShader.setVec3("objectColor", objectColor.x, objectColor.y, objectColor.z);
+        mainShader.setVec3("lightColor", lightColor.x, lightColor.y, lightColor.z);
+        mainShader.setVec3("viewPos", globCamera->getPosition());
+
+        updatePos(deltaTime*dtSpeed);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        animate(window, deltaTime, NUM_PARTICLES);
-        std::cout<<"framerate: "<<1.0/deltaTime<<std::endl;
+        UserMenu();
+        gui.drawData();
+        animate(window, deltaTime*dtSpeed, NUM_PARTICLES);
+        framerate = 1.0f/deltaTime;
+        // std::cout<<"framerate: "<<1.0/deltaTime<<std::endl;
     }
 
     glDeleteBuffers(1, &posColVbo);

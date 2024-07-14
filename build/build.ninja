@@ -42,15 +42,17 @@ cmake_ninja_workdir = D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Compu
 #############################################
 # Order-only phony target for NBodyProblem
 
-build cmake_object_order_depends_target_NBodyProblem: phony || cmake_object_order_depends_target_NBodyProblemDependencies cmake_object_order_depends_target_glad cmake_object_order_depends_target_glm
+build cmake_object_order_depends_target_NBodyProblem: phony || cmake_object_order_depends_target_NBodyProblemDependencies cmake_object_order_depends_target_glad cmake_object_order_depends_target_glm cmake_object_order_depends_target_imgui
 
 build CMakeFiles/NBodyProblem.dir/chat_ex.cpp.obj: CXX_COMPILER__NBodyProblem_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/chat_ex.cpp || cmake_object_order_depends_target_NBodyProblem
   DEFINES = -DCL_HPP_MINIMUM_OPENCL_VERSION=0 -DCL_HPP_TARGET_OPENCL_VERSION=0
   DEP_FILE = CMakeFiles\NBodyProblem.dir\chat_ex.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
   OBJECT_DIR = CMakeFiles\NBodyProblem.dir
   OBJECT_FILE_DIR = CMakeFiles\NBodyProblem.dir
+  TARGET_COMPILE_PDB = CMakeFiles\NBodyProblem.dir\
+  TARGET_PDB = NBodyProblem.pdb
 
 
 # =============================================================================
@@ -60,14 +62,15 @@ build CMakeFiles/NBodyProblem.dir/chat_ex.cpp.obj: CXX_COMPILER__NBodyProblem_un
 #############################################
 # Link the executable NBodyProblem.exe
 
-build NBodyProblem.exe: CXX_EXECUTABLE_LINKER__NBodyProblem_ CMakeFiles/NBodyProblem.dir/chat_ex.cpp.obj | src/libNBodyProblemDependencies.a extern/glad/libglad.a extern/glm/glm/libglm.a C$:/Windows/System32/OpenCL.dll || extern/glad/libglad.a extern/glm/glm/libglm.a src/libNBodyProblemDependencies.a
-  LINK_LIBRARIES = src/libNBodyProblemDependencies.a  -lglfw3  extern/glad/libglad.a  -lopengl32  extern/glm/glm/libglm.a  C:/Windows/System32/OpenCL.dll  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+build NBodyProblem.exe: CXX_EXECUTABLE_LINKER__NBodyProblem_ CMakeFiles/NBodyProblem.dir/chat_ex.cpp.obj | src/libNBodyProblemDependencies.a extern/glad/libglad.a extern/glm/glm/libglm.a C$:/Windows/System32/OpenCL.dll extern/libimgui.a || extern/glad/libglad.a extern/glm/glm/libglm.a extern/libimgui.a src/libNBodyProblemDependencies.a
+  LINK_LIBRARIES = src/libNBodyProblemDependencies.a  extern/glad/libglad.a  -lopengl32  extern/glm/glm/libglm.a  C:/Windows/System32/OpenCL.dll  extern/libimgui.a  -lglfw3  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\NBodyProblem.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\NBodyProblem.dir\
   TARGET_FILE = NBodyProblem.exe
   TARGET_IMPLIB = libNBodyProblem.dll.a
-  TARGET_PDB = NBodyProblem.exe.dbg
+  TARGET_PDB = NBodyProblem.pdb
 
 
 #############################################
@@ -97,6 +100,94 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Write statements declared in CMakeLists.txt:
 # D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/CMakeLists.txt
 # =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target imgui
+
+
+#############################################
+# Order-only phony target for imgui
+
+build cmake_object_order_depends_target_imgui: phony || extern/CMakeFiles/imgui.dir
+
+build extern/CMakeFiles/imgui.dir/imgui/imgui.cpp.obj: CXX_COMPILER__imgui_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/imgui.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = extern\CMakeFiles\imgui.dir\imgui\imgui.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
+  OBJECT_DIR = extern\CMakeFiles\imgui.dir
+  OBJECT_FILE_DIR = extern\CMakeFiles\imgui.dir\imgui
+  TARGET_COMPILE_PDB = extern\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = extern\libimgui.pdb
+
+build extern/CMakeFiles/imgui.dir/imgui/imgui_demo.cpp.obj: CXX_COMPILER__imgui_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/imgui_demo.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = extern\CMakeFiles\imgui.dir\imgui\imgui_demo.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
+  OBJECT_DIR = extern\CMakeFiles\imgui.dir
+  OBJECT_FILE_DIR = extern\CMakeFiles\imgui.dir\imgui
+  TARGET_COMPILE_PDB = extern\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = extern\libimgui.pdb
+
+build extern/CMakeFiles/imgui.dir/imgui/imgui_draw.cpp.obj: CXX_COMPILER__imgui_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/imgui_draw.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = extern\CMakeFiles\imgui.dir\imgui\imgui_draw.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
+  OBJECT_DIR = extern\CMakeFiles\imgui.dir
+  OBJECT_FILE_DIR = extern\CMakeFiles\imgui.dir\imgui
+  TARGET_COMPILE_PDB = extern\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = extern\libimgui.pdb
+
+build extern/CMakeFiles/imgui.dir/imgui/imgui_tables.cpp.obj: CXX_COMPILER__imgui_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/imgui_tables.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = extern\CMakeFiles\imgui.dir\imgui\imgui_tables.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
+  OBJECT_DIR = extern\CMakeFiles\imgui.dir
+  OBJECT_FILE_DIR = extern\CMakeFiles\imgui.dir\imgui
+  TARGET_COMPILE_PDB = extern\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = extern\libimgui.pdb
+
+build extern/CMakeFiles/imgui.dir/imgui/imgui_widgets.cpp.obj: CXX_COMPILER__imgui_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/imgui_widgets.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = extern\CMakeFiles\imgui.dir\imgui\imgui_widgets.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
+  OBJECT_DIR = extern\CMakeFiles\imgui.dir
+  OBJECT_FILE_DIR = extern\CMakeFiles\imgui.dir\imgui
+  TARGET_COMPILE_PDB = extern\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = extern\libimgui.pdb
+
+build extern/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_glfw.cpp.obj: CXX_COMPILER__imgui_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends/imgui_impl_glfw.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = extern\CMakeFiles\imgui.dir\imgui\backends\imgui_impl_glfw.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
+  OBJECT_DIR = extern\CMakeFiles\imgui.dir
+  OBJECT_FILE_DIR = extern\CMakeFiles\imgui.dir\imgui\backends
+  TARGET_COMPILE_PDB = extern\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = extern\libimgui.pdb
+
+build extern/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_opengl3.cpp.obj: CXX_COMPILER__imgui_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends/imgui_impl_opengl3.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = extern\CMakeFiles\imgui.dir\imgui\backends\imgui_impl_opengl3.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
+  OBJECT_DIR = extern\CMakeFiles\imgui.dir
+  OBJECT_FILE_DIR = extern\CMakeFiles\imgui.dir\imgui\backends
+  TARGET_COMPILE_PDB = extern\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = extern\libimgui.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target imgui
+
+
+#############################################
+# Link the static library extern\libimgui.a
+
+build extern/libimgui.a: CXX_STATIC_LIBRARY_LINKER__imgui_ extern/CMakeFiles/imgui.dir/imgui/imgui.cpp.obj extern/CMakeFiles/imgui.dir/imgui/imgui_demo.cpp.obj extern/CMakeFiles/imgui.dir/imgui/imgui_draw.cpp.obj extern/CMakeFiles/imgui.dir/imgui/imgui_tables.cpp.obj extern/CMakeFiles/imgui.dir/imgui/imgui_widgets.cpp.obj extern/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_glfw.cpp.obj extern/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_opengl3.cpp.obj
+  OBJECT_DIR = extern\CMakeFiles\imgui.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = extern\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_FILE = extern\libimgui.a
+  TARGET_PDB = extern\libimgui.pdb
 
 
 #############################################
@@ -141,6 +232,8 @@ build extern/glad/CMakeFiles/glad.dir/src/glad.c.obj: C_COMPILER__glad_unscanned
   INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include"
   OBJECT_DIR = extern\glad\CMakeFiles\glad.dir
   OBJECT_FILE_DIR = extern\glad\CMakeFiles\glad.dir\src
+  TARGET_COMPILE_PDB = extern\glad\CMakeFiles\glad.dir\glad.pdb
+  TARGET_PDB = extern\glad\libglad.pdb
 
 
 # =============================================================================
@@ -154,8 +247,9 @@ build extern/glad/libglad.a: C_STATIC_LIBRARY_LINKER__glad_ extern/glad/CMakeFil
   OBJECT_DIR = extern\glad\CMakeFiles\glad.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = extern\glad\CMakeFiles\glad.dir\glad.pdb
   TARGET_FILE = extern\glad\libglad.a
-  TARGET_PDB = glad.a.dbg
+  TARGET_PDB = extern\glad\libglad.pdb
 
 
 #############################################
@@ -230,6 +324,8 @@ build extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj: CXX_COMPILER__glm_un
   INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
   OBJECT_DIR = extern\glm\glm\CMakeFiles\glm.dir
   OBJECT_FILE_DIR = extern\glm\glm\CMakeFiles\glm.dir\detail
+  TARGET_COMPILE_PDB = extern\glm\glm\CMakeFiles\glm.dir\glm.pdb
+  TARGET_PDB = extern\glm\glm\libglm.pdb
 
 
 # =============================================================================
@@ -243,8 +339,9 @@ build extern/glm/glm/libglm.a: CXX_STATIC_LIBRARY_LINKER__glm_ extern/glm/glm/CM
   OBJECT_DIR = extern\glm\glm\CMakeFiles\glm.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = extern\glm\glm\CMakeFiles\glm.dir\glm.pdb
   TARGET_FILE = extern\glm\glm\libglm.a
-  TARGET_PDB = glm.a.dbg
+  TARGET_PDB = extern\glm\glm\libglm.pdb
 
 
 #############################################
@@ -282,42 +379,61 @@ build extern/glm/glm/rebuild_cache: phony extern/glm/glm/CMakeFiles/rebuild_cach
 #############################################
 # Order-only phony target for NBodyProblemDependencies
 
-build cmake_object_order_depends_target_NBodyProblemDependencies: phony || cmake_object_order_depends_target_glad cmake_object_order_depends_target_glm
+build cmake_object_order_depends_target_NBodyProblemDependencies: phony || cmake_object_order_depends_target_glad cmake_object_order_depends_target_glm cmake_object_order_depends_target_imgui
 
 build src/CMakeFiles/NBodyProblemDependencies.dir/auxilliary.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/auxilliary.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
   DEP_FILE = src\CMakeFiles\NBodyProblemDependencies.dir\auxilliary.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
   OBJECT_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
   OBJECT_FILE_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
+  TARGET_COMPILE_PDB = src\CMakeFiles\NBodyProblemDependencies.dir\NBodyProblemDependencies.pdb
+  TARGET_PDB = src\libNBodyProblemDependencies.pdb
 
 build src/CMakeFiles/NBodyProblemDependencies.dir/body.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/body.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
   DEP_FILE = src\CMakeFiles\NBodyProblemDependencies.dir\body.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
   OBJECT_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
   OBJECT_FILE_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
+  TARGET_COMPILE_PDB = src\CMakeFiles\NBodyProblemDependencies.dir\NBodyProblemDependencies.pdb
+  TARGET_PDB = src\libNBodyProblemDependencies.pdb
 
 build src/CMakeFiles/NBodyProblemDependencies.dir/camera3.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/camera3.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
   DEP_FILE = src\CMakeFiles\NBodyProblemDependencies.dir\camera3.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
   OBJECT_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
   OBJECT_FILE_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
+  TARGET_COMPILE_PDB = src\CMakeFiles\NBodyProblemDependencies.dir\NBodyProblemDependencies.pdb
+  TARGET_PDB = src\libNBodyProblemDependencies.pdb
 
 build src/CMakeFiles/NBodyProblemDependencies.dir/initCl.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/initCl.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
   DEP_FILE = src\CMakeFiles\NBodyProblemDependencies.dir\initCl.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
   OBJECT_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
   OBJECT_FILE_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
+  TARGET_COMPILE_PDB = src\CMakeFiles\NBodyProblemDependencies.dir\NBodyProblemDependencies.pdb
+  TARGET_PDB = src\libNBodyProblemDependencies.pdb
 
 build src/CMakeFiles/NBodyProblemDependencies.dir/initGL.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/initGL.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
   DEP_FILE = src\CMakeFiles\NBodyProblemDependencies.dir\initGL.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm"
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
   OBJECT_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
   OBJECT_FILE_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
+  TARGET_COMPILE_PDB = src\CMakeFiles\NBodyProblemDependencies.dir\NBodyProblemDependencies.pdb
+  TARGET_PDB = src\libNBodyProblemDependencies.pdb
+
+build src/CMakeFiles/NBodyProblemDependencies.dir/interface.cpp.obj: CXX_COMPILER__NBodyProblemDependencies_unscanned_ D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/interface.cpp || cmake_object_order_depends_target_NBodyProblemDependencies
+  DEP_FILE = src\CMakeFiles\NBodyProblemDependencies.dir\interface.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/include" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui" -I"D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/imgui/backends"
+  OBJECT_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
+  TARGET_COMPILE_PDB = src\CMakeFiles\NBodyProblemDependencies.dir\NBodyProblemDependencies.pdb
+  TARGET_PDB = src\libNBodyProblemDependencies.pdb
 
 
 # =============================================================================
@@ -327,12 +443,13 @@ build src/CMakeFiles/NBodyProblemDependencies.dir/initGL.cpp.obj: CXX_COMPILER__
 #############################################
 # Link the static library src\libNBodyProblemDependencies.a
 
-build src/libNBodyProblemDependencies.a: CXX_STATIC_LIBRARY_LINKER__NBodyProblemDependencies_ src/CMakeFiles/NBodyProblemDependencies.dir/auxilliary.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/body.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/camera3.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/initCl.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/initGL.cpp.obj || extern/glad/libglad.a extern/glm/glm/libglm.a
+build src/libNBodyProblemDependencies.a: CXX_STATIC_LIBRARY_LINKER__NBodyProblemDependencies_ src/CMakeFiles/NBodyProblemDependencies.dir/auxilliary.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/body.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/camera3.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/initCl.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/initGL.cpp.obj src/CMakeFiles/NBodyProblemDependencies.dir/interface.cpp.obj || extern/glad/libglad.a extern/glm/glm/libglm.a extern/libimgui.a
   OBJECT_DIR = src\CMakeFiles\NBodyProblemDependencies.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = src\CMakeFiles\NBodyProblemDependencies.dir\NBodyProblemDependencies.pdb
   TARGET_FILE = src\libNBodyProblemDependencies.a
-  TARGET_PDB = NBodyProblemDependencies.a.dbg
+  TARGET_PDB = src\libNBodyProblemDependencies.pdb
 
 
 #############################################
@@ -369,11 +486,15 @@ build glad: phony extern/glad/libglad.a
 
 build glm: phony extern/glm/glm/libglm.a
 
+build imgui: phony extern/libimgui.a
+
 build libNBodyProblemDependencies.a: phony src/libNBodyProblemDependencies.a
 
 build libglad.a: phony extern/glad/libglad.a
 
 build libglm.a: phony extern/glm/glm/libglm.a
+
+build libimgui.a: phony extern/libimgui.a
 
 # =============================================================================
 # Folder targets.
@@ -390,7 +511,7 @@ build all: phony NBodyProblem.exe extern/all src/all
 #############################################
 # Folder: D:/Users/Escritorio/U/Otoño 2024 - 9no semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/build/extern
 
-build extern/all: phony extern/glad/all extern/glm/all
+build extern/all: phony extern/libimgui.a extern/glad/all extern/glm/all
 
 # =============================================================================
 
@@ -427,14 +548,14 @@ build src/all: phony src/libNBodyProblemDependencies.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Config.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3ConfigVersion.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets-release.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindOpenGL.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageMessage.cmake C$:/msys64/ucrt64/share/cmake/Modules/GNUInstallDirs.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/glm/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/CMakeLists.txt
+build build.ninja: RERUN_CMAKE | C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Config.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3ConfigVersion.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets-release.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCCompiler.cmake.in C$:/msys64/ucrt64/share/cmake/Modules/CMakeCCompilerABI.c C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompiler.cmake.in C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompilerABI.cpp C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCompilerIdDetection.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerId.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineRCCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeNinjaFindMake.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCCompiler.cmake.in C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystem.cmake.in C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeTestCCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeTestCXXCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeTestCompilerCommon.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeTestRCCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindOpenGL.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageMessage.cmake C$:/msys64/ucrt64/share/cmake/Modules/GNUInstallDirs.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/FeatureTesting.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Determine-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/glm/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Config.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3ConfigVersion.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets-release.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindOpenGL.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageMessage.cmake C$:/msys64/ucrt64/share/cmake/Modules/GNUInstallDirs.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/glm/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/CMakeLists.txt: phony
+build C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Config.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3ConfigVersion.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets-release.cmake C$:/msys64/ucrt64/lib/cmake/glfw3/glfw3Targets.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCCompiler.cmake.in C$:/msys64/ucrt64/share/cmake/Modules/CMakeCCompilerABI.c C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompiler.cmake.in C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompilerABI.cpp C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCompilerIdDetection.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineCompilerId.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineRCCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeDetermineSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeFindBinUtils.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeNinjaFindMake.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCCompiler.cmake.in C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystem.cmake.in C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeTestCCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeTestCXXCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeTestCompilerCommon.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeTestRCCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindOpenGL.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/ucrt64/share/cmake/Modules/FindPackageMessage.cmake C$:/msys64/ucrt64/share/cmake/Modules/GNUInstallDirs.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/FeatureTesting.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Determine-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glad/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/extern/glm/glm/CMakeLists.txt D$:/Users/Escritorio/U/Otoño$ 2024$ -$ 9no$ semestre/Computacion-En-GPU/Proyecto-Semestral-GPU/src/CMakeLists.txt: phony
 
 
 #############################################
